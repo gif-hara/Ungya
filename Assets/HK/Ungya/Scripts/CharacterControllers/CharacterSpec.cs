@@ -22,7 +22,7 @@ namespace HK
         }
         
         [Serializable]
-        public class Parameter
+        public struct Parameter
         {
             public string name;
             

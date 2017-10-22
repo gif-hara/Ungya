@@ -13,6 +13,8 @@ namespace HK.Ungya.CharacterControllers
         public Transform CachedTransform { private set; get; }
 
         public CharacterStatus Status { private set; get; }
+        
+        public bool IsDead { get { return this.Status.IsDead; } }
 
         void Awake()
         {
@@ -28,7 +30,7 @@ namespace HK.Ungya.CharacterControllers
 
         public void Attack(Character target)
         {
-            target.TakeDamage(1);
+            target.TakeDamage(this.Status.Instance.strength);
         }
 
         public void TakeDamage(int damage)
@@ -39,7 +41,11 @@ namespace HK.Ungya.CharacterControllers
                 return;
             }
             
-            Destroy(this.gameObject);
+            this.Status.TakeDamage(damage);
+            if (this.Status.IsDead)
+            {
+                Destroy(this.gameObject);
+            }
         }
     }
 }
