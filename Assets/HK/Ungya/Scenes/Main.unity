@@ -202,6 +202,7 @@ GameObject:
   - component: {fileID: 1550845122}
   - component: {fileID: 1550845123}
   - component: {fileID: 1550845124}
+  - component: {fileID: 1550845125}
   m_Layer: 0
   m_Name: Systems
   m_TagString: Untagged
@@ -249,3 +250,15 @@ MonoBehaviour:
   character: {fileID: 114490799435476392, guid: 08e73c631c8a244499ac806be30f315d,
     type: 2}
   distance: 5
+--- !u!114 &1550845125
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1550845121}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a205e1b065db4e019d5db8cdeb8c1bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  characterSpec: {fileID: 11400000, guid: b873ddc474ee4487cb6a839923222913, type: 2}

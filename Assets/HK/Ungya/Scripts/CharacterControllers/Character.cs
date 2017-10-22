@@ -12,15 +12,18 @@ namespace HK.Ungya.CharacterControllers
 
         public Transform CachedTransform { private set; get; }
 
+        public CharacterStatus Status { private set; get; }
+
         void Awake()
         {
             this.Provider = new MessageBroker();
             this.CachedTransform = this.transform;
         }
 
-        public void Setup(StateMachine stateMachine)
+        public void Setup(StateMachine stateMachine, CharacterStatus status)
         {
             this.StateMachine = stateMachine;
+            this.Status = status;
         }
 
         public void Attack(Character target)

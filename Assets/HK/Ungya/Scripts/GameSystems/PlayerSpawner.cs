@@ -2,8 +2,6 @@
 using HK.Ungya.CharacterControllers;
 using HK.Ungya.Events.CharacterControllers;
 using HK.Ungya.StateMachines;
-using UniRx;
-using UniRx.Triggers;
 using UnityEngine;
 using PlayerMove = HK.Ungya.StateMachines.PlayerMove;
 
@@ -18,7 +16,8 @@ namespace HK.Ungya.GameSystems
         {
             var player = Instantiate(this.character);
             var stateMachine = new StateMachine(player, new PlayerMove());
-            player.Setup(stateMachine);
+            var status = GameManager.Instance.CharacterSpec.CreatePlayerStatus();
+            player.Setup(stateMachine, status);
             
             UniRxEvent.GlobalBroker.Publish(PlayerSpawned.Get(player));
         }
