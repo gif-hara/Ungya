@@ -1,4 +1,5 @@
 ﻿using HK.Ungya.CharacterControllers;
+using HK.Ungya.StateMachines;
 using UnityEngine;
 
 namespace HK.Ungya.GameSystems
@@ -10,7 +11,9 @@ namespace HK.Ungya.GameSystems
 
         void Start()
         {
-            Instantiate(this.character);
+            var instance = Instantiate(this.character);
+            var stateMachine = new StateMachine(instance, new PlayerMove());
+            instance.Setup(stateMachine);
         }
     }
 }
