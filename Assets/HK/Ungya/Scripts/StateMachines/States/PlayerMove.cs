@@ -1,4 +1,7 @@
 ﻿using HK.Ungya.CharacterControllers;
+using UniRx;
+using UniRx.Triggers;
+using UnityEngine;
 
 namespace HK.Ungya.StateMachines
 {
@@ -6,13 +9,13 @@ namespace HK.Ungya.StateMachines
     {
         public override void OnEnter(StateMachine stateMachine, Character character)
         {
-            throw new System.NotImplementedException();
-        }
-
-        public override void OnExit()
-        {
-            base.OnExit();
-            throw new System.NotImplementedException();
+            character.UpdateAsObservable()
+                .Where(_ => character.isActiveAndEnabled)
+                .SubscribeWithState(character, (_, c) =>
+                {
+                    c.Provider.Publish(Events.CharacterControllers.PlayerMove.GetCache(Vector2.right, 1.0f));
+                })
+                .AddTo(this.duringStateStream);
         }
     }
 }

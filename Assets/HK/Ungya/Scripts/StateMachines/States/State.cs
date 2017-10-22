@@ -5,7 +5,7 @@ namespace HK.Ungya.StateMachines
 {
     public abstract class State : IState
     {
-        private CompositeDisposable duringStateStream;
+        protected CompositeDisposable duringStateStream = new CompositeDisposable();
         
         public virtual void OnEnter(StateMachine stateMachine, Character character)
         {
