@@ -10,9 +10,12 @@ namespace HK.Ungya.CharacterControllers
         
         public StateMachine StateMachine { private set; get; }
 
+        public Transform CachedTransform { private set; get; }
+
         void Awake()
         {
             this.Provider = new MessageBroker();
+            this.CachedTransform = this.transform;
         }
 
         public void Setup(StateMachine stateMachine)
