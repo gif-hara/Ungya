@@ -16,6 +16,8 @@ namespace HK.Ungya.CharacterControllers
         
         public bool IsDead { get { return this.Status.IsDead; } }
 
+        private Character target;
+
         void Awake()
         {
             this.Provider = new MessageBroker();
@@ -28,9 +30,14 @@ namespace HK.Ungya.CharacterControllers
             this.Status = status;
         }
 
-        public void Attack(Character target)
+        public void SetTarget(Character target)
         {
-            target.TakeDamage(this.Status.Instance.strength);
+            this.target = target;
+        }
+
+        public void Attack()
+        {
+            this.target.TakeDamage(this.Status.Instance.strength);
         }
 
         public void TakeDamage(int damage)
