@@ -22,5 +22,21 @@ namespace HK.Ungya.CharacterControllers
         {
             this.StateMachine = stateMachine;
         }
+
+        public void Attack(Character target)
+        {
+            target.TakeDamage(1);
+        }
+
+        public void TakeDamage(int damage)
+        {
+            // TODO: プレイヤーのダメージ処理
+            if (this.tag == "Player")
+            {
+                return;
+            }
+            
+            Destroy(this.gameObject);
+        }
     }
 }

@@ -248,3 +248,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   character: {fileID: 114490799435476392, guid: 08e73c631c8a244499ac806be30f315d,
     type: 2}
+  distance: 5
