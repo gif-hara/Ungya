@@ -2,15 +2,16 @@
 
 namespace HK.Ungya.StateMachines
 {
-    public sealed class PlayerMove : IState
+    public sealed class PlayerMove : State
     {
-        public void OnEnter(StateMachine stateMachine, Character character)
+        public override void OnEnter(StateMachine stateMachine, Character character)
         {
             throw new System.NotImplementedException();
         }
 
-        public void OnExit()
+        public override void OnExit()
         {
+            base.OnExit();
             throw new System.NotImplementedException();
         }
     }
