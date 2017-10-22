@@ -18,6 +18,6 @@ MonoBehaviour:
     defence: 0
   Enemies:
   - name: "\u65750"
-    hitPoint: 10
+    hitPoint: 30
     strength: 5
     defence: 0

@@ -27,6 +27,13 @@ namespace HK.Ungya.CharacterControllers
             Assert.IsNotNull(mediator);
             
             mediator.Setup(character);
+            
+            character.Provider.Receive<PlayerMove>()
+                .SubscribeWithState(animator, (m, _animator) =>
+                {
+                    _animator.SetFloat(AnimatorParameter.Velocity, m.Speed);
+                })
+                .AddTo(this);
 
             character.Provider.Receive<StartAttack>()
                 .SubscribeWithState(animator, (a, _animator) =>
