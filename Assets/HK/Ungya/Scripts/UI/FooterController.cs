@@ -65,9 +65,9 @@ namespace HK.Ungya.UI
 
         public void Setup(params ButtonParameter[] parameters)
         {
-            foreach (var footerButton in this.footerButtons)
+            for (int i = 0; i < this.footerButtons.Count; i++)
             {
-                footerButton.Button.gameObject.SetActive(false);
+                this.footerButtons[i].Button.gameObject.SetActive(i < parameters.Length);
             }
 
             for (int i = 0; i < parameters.Length; i++)
@@ -76,7 +76,6 @@ namespace HK.Ungya.UI
                 var footerButton = this.footerButtons[i];
                 this.buttonActions[i] = buttonParameter.Action;
                 footerButton.Text.text = buttonParameter.Name.Get;
-                footerButton.Button.gameObject.SetActive(true);
             }
         }
         
