@@ -444,7 +444,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a74dd5c4ca16420f9d834b9b1d53c38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  main: {fileID: 0}
   tweenDutation: 0.5
   tweenEase: 7
 --- !u!1 &568321068
@@ -1674,7 +1673,7 @@ GameObject:
   - component: {fileID: 1194014186}
   - component: {fileID: 1194014185}
   m_Layer: 5
-  m_Name: Deathblow
+  m_Name: Button0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1784,6 +1783,7 @@ GameObject:
   - component: {fileID: 1504796814}
   - component: {fileID: 1504796813}
   - component: {fileID: 1504796815}
+  - component: {fileID: 1504796816}
   m_Layer: 5
   m_Name: Footer
   m_TagString: Untagged
@@ -1866,6 +1866,38 @@ MonoBehaviour:
   m_ChildForceExpandHeight: 1
   m_ChildControlWidth: 1
   m_ChildControlHeight: 1
+--- !u!114 &1504796816
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1504796811}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d3e323b9a19046019276edce8b7521b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  footerButtons:
+  - Button: {fileID: 1194014185}
+    Text: {fileID: 928020636}
+  - Button: {fileID: 1901777669}
+    Text: {fileID: 1012453467}
+  skillName:
+    target: {fileID: 11400000, guid: 16e0a023a0e1042dfae773c2abc4358d, type: 2}
+    value: "\u5FC5\u6BBA"
+    guid: cd5fc39a-ae38-46ae-a1cc-c9f5f05d22cb
+  exerciseName:
+    target: {fileID: 11400000, guid: 16e0a023a0e1042dfae773c2abc4358d, type: 2}
+    value: "\u935B\u932C"
+    guid: 1a290c6d-7508-4ba7-8d08-a05dd1a26e11
+  sortName:
+    target: {fileID: 11400000, guid: 16e0a023a0e1042dfae773c2abc4358d, type: 2}
+    value: "\u6574\u9813"
+    guid: 855d2ada-c95d-4711-b0c7-d4c7f1836ca6
+  cancelName:
+    target: {fileID: 11400000, guid: 16e0a023a0e1042dfae773c2abc4358d, type: 2}
+    value: "\u623B\u308B"
+    guid: 5881f196-91ff-4d10-ad21-c28ffa00b467
 --- !u!1 &1532254403
 GameObject:
   m_ObjectHideFlags: 0
@@ -2506,7 +2538,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1872660457}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.000028215349, z: 0}
+  m_LocalPosition: {x: 0, y: 0.000050634146, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 53002864}
@@ -2514,7 +2546,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -0.000028215349}
+  m_AnchoredPosition: {x: 0, y: 0.000050634146}
   m_SizeDelta: {x: 0, y: 300}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1872660459
@@ -2563,9 +2595,8 @@ GameObject:
   - component: {fileID: 1901777671}
   - component: {fileID: 1901777670}
   - component: {fileID: 1901777669}
-  - component: {fileID: 1901777672}
   m_Layer: 5
-  m_Name: GotoExercise
+  m_Name: Button1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2664,17 +2695,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1901777667}
---- !u!114 &1901777672
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1901777667}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1c939f0c8c3c049e2a7885ae867ec27a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1973387257
 GameObject:
   m_ObjectHideFlags: 0
