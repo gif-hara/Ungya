@@ -3,7 +3,7 @@ using HK.Ungya.CharacterControllers;
 using HK.Ungya.Events.CharacterControllers;
 using HK.Ungya.StateMachines;
 using UnityEngine;
-using PlayerMove = HK.Ungya.StateMachines.PlayerMove;
+using Move = HK.Ungya.StateMachines.Move;
 
 namespace HK.Ungya.GameSystems
 {
@@ -15,7 +15,7 @@ namespace HK.Ungya.GameSystems
         void Start()
         {
             var player = Instantiate(this.character);
-            var stateMachine = new StateMachine(player, new PlayerMove());
+            var stateMachine = new StateMachine(player, new Move());
             var status = GameManager.Instance.CharacterSpec.CreatePlayerStatus();
             player.Setup(stateMachine, status);
             

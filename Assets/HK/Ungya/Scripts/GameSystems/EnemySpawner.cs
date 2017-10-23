@@ -4,7 +4,7 @@ using HK.Ungya.GameSystems;
 using HK.Ungya.StateMachines;
 using UniRx;
 using UnityEngine;
-using PlayerMove = HK.Ungya.Events.CharacterControllers.PlayerMove;
+using Move = HK.Ungya.Events.CharacterControllers.Move;
 
 namespace HK.Ungya.CharacterControllers
 {
@@ -30,7 +30,7 @@ namespace HK.Ungya.CharacterControllers
 
         private void ReceivePlayerMove(Character player)
         {
-            player.Provider.Receive<PlayerMove>()
+            player.Provider.Receive<Move>()
                 .SubscribeWithState2(this, player, (p, _this, _player) =>
                 {
                     _this.spawnDistance -= p.Speed * Time.deltaTime;
@@ -50,7 +50,7 @@ namespace HK.Ungya.CharacterControllers
             var status = GameManager.Instance.CharacterSpec.CreateEnemyStatus(0);
             enemy.Setup(stateMachine, status);
             enemy.CachedTransform.position = new Vector3(direction.x * this.distance , 0.0f, 0.0f);
-            player.Provider.Receive<PlayerMove>()
+            player.Provider.Receive<Move>()
                 .SubscribeWithState(enemy, (p, _enemy) =>
                 {
                     var speed = p.Speed * Time.deltaTime;

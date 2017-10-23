@@ -28,7 +28,7 @@ namespace HK.Ungya.CharacterControllers
             
             mediator.Setup(character);
             
-            character.Provider.Receive<PlayerMove>()
+            character.Provider.Receive<Move>()
                 .SubscribeWithState(animator, (m, _animator) =>
                 {
                     _animator.SetFloat(AnimatorParameter.Velocity, m.Speed);

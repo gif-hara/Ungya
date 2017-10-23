@@ -6,7 +6,7 @@ using UnityEngine.Assertions;
 
 namespace HK.Ungya.StateMachines
 {
-    public sealed class PlayerMove : State
+    public sealed class Move : State
     {
         public override void OnEnter(StateMachine stateMachine, Character character)
         {
@@ -14,7 +14,7 @@ namespace HK.Ungya.StateMachines
                 .Where(_ => character.isActiveAndEnabled)
                 .SubscribeWithState(character, (_, c) =>
                 {
-                    c.Provider.Publish(Events.CharacterControllers.PlayerMove.GetCache(Vector2.right, 1.0f));
+                    c.Provider.Publish(Events.CharacterControllers.Move.GetCache(Vector2.right, 1.0f));
                 })
                 .AddTo(this.duringStateStream);
             character.OnTriggerEnter2DAsObservable()

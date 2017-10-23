@@ -27,7 +27,7 @@ namespace HK.Ungya.StateMachines
                 {
                     if (_this.target.IsDead)
                     {
-                        c.StateMachine.Change(new PlayerMove());
+                        c.StateMachine.Change(new Move());
                     }
                     else
                     {
@@ -50,7 +50,7 @@ namespace HK.Ungya.StateMachines
 //                    c.Attack(_this.target);
 //                    if (_this.target.IsDead)
 //                    {
-//                        c.StateMachine.Change(new PlayerMove());
+//                        c.StateMachine.Change(new Move());
 //                    }
 //                    else
 //                    {

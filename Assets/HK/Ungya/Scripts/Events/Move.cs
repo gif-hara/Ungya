@@ -3,10 +3,10 @@ using UnityEngine;
 
 namespace HK.Ungya.Events.CharacterControllers
 {
-    public class PlayerMove : UniRxEvent<PlayerMove, Vector2, float>
+    public class Move : UniRxEvent<Move, Vector2, float>
     {
-        private static readonly PlayerMove cache = new PlayerMove();
-        public static PlayerMove GetCache(Vector2 direction, float speed)
+        private static readonly Move cache = new Move();
+        public static Move GetCache(Vector2 direction, float speed)
         {
             cache.param1 = direction;
             cache.param2 = speed;
