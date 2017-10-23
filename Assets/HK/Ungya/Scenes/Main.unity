@@ -262,3 +262,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterSpec: {fileID: 11400000, guid: b873ddc474ee4487cb6a839923222913, type: 2}
+  itemSpec: {fileID: 11400000, guid: 86abf023d406148418dec4117799a0bd, type: 2}
+  itemDropTable: {fileID: 11400000, guid: c20ae956feb7c4e9db9f3b7e16e54954, type: 2}

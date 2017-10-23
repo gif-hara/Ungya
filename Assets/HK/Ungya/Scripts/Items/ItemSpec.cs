@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using HK.Framework.Text;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 namespace HK.Ungya.Items
@@ -8,20 +6,20 @@ namespace HK.Ungya.Items
     [CreateAssetMenu(menuName = "HK/Ungya/ItemSpec")]
     public sealed class ItemSpec : ScriptableObject
     {
-        public List<Parameter> Items = new List<Parameter>();
+        public List<Item> Items = new List<Item>();
         
-        [Serializable]
-        public class Parameter
+        private Dictionary<int, Item> cachedItems = new Dictionary<int, Item>();
+
+        public Item Get(int itemNameHash)
         {
-            public StringAsset.Finder Name;
+            Item result;
+            if (!this.cachedItems.TryGetValue(itemNameHash, out result))
+            {
+                result = this.Items.Find(i => i.NameHash == itemNameHash);
+                this.cachedItems.Add(itemNameHash, result);
+            }
 
-            public StringAsset.Finder Description;
-
-            public ItemType Type;
-
-            public int SpecId;
-
-            public int NameHash { get { return this.Name.GetHashCode(); } }
+            return result;
         }
     }
 }

@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using HK.Ungya.CharacterControllers;
+using HK.Ungya.Items;
+using UnityEngine;
 using UnityEngine.Assertions;
 
 namespace HK.Ungya.GameSystems
@@ -11,6 +13,14 @@ namespace HK.Ungya.GameSystems
         [SerializeField]
         private CharacterSpec characterSpec;
         public CharacterSpec CharacterSpec { get { return this.characterSpec; } }
+
+        [SerializeField]
+        private ItemSpec itemSpec;
+        public ItemSpec ItemSpec { get { return this.itemSpec; } }
+
+        [SerializeField]
+        private ItemDropTable itemDropTable;
+        public ItemDropTable ItemDropTable { get { return this.itemDropTable; } }
 
         void Awake()
         {

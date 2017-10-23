@@ -1,12 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using HK.Framework.Text;
+using HK.Ungya.Items;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace HK.Ungya.CharacterControllers
 {
-    [CreateAssetMenu(menuName = "HK/Ungya/DropItemTable")]
-    public sealed class DropItemTable : ScriptableObject
+    [CreateAssetMenu(menuName = "HK/Ungya/ItemDropTable")]
+    public sealed class ItemDropTable : ScriptableObject
     {
         [SerializeField]
         private List<Table> Tables = new List<Table>();
@@ -34,6 +36,25 @@ namespace HK.Ungya.CharacterControllers
             public StringAsset.Finder CharacterName;
             
             public List<Element> Elements;
+
+            /// <summary>
+            /// アイテム取得の抽選を行う
+            /// </summary>
+            public List<Item> Lottery(ItemSpec spec)
+            {
+                var result = new List<Item>();
+                foreach (var element in this.Elements)
+                {
+                    if (!element.Possible)
+                    {
+                        continue;
+                    }
+                    
+                    result.Add(spec.Get(element.ItemName.GetHashCode()));
+                }
+
+                return result;
+            }
         }
         
         [Serializable]
@@ -43,6 +64,14 @@ namespace HK.Ungya.CharacterControllers
             public float Rate;
             
             public StringAsset.Finder ItemName;
+
+            /// <summary>
+            /// <see cref="Rate"/>からアイテムを取得したか返す
+            /// </summary>
+            public bool Possible
+            {
+                get { return this.Rate >= Random.value; }
+            }
         }
     }
 }

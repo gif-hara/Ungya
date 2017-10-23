@@ -1,6 +1,8 @@
-﻿using HK.Framework.EventSystems;
+﻿using System.Linq;
+using HK.Framework.EventSystems;
 using HK.Ungya.Events.CharacterControllers;
 using HK.Ungya.GameSystems;
+using HK.Ungya.Items;
 using HK.Ungya.StateMachines;
 using UniRx;
 using UnityEngine;
@@ -50,6 +52,8 @@ namespace HK.Ungya.CharacterControllers
             var status = GameManager.Instance.CharacterSpec.CreateEnemyStatus(0);
             enemy.Setup(stateMachine, status);
             enemy.CachedTransform.position = new Vector3(direction.x * this.distance , 0.0f, 0.0f);
+            
+            // プレイヤーのMoveイベントを購読して移動する
             player.Provider.Receive<Move>()
                 .SubscribeWithState(enemy, (p, _enemy) =>
                 {
@@ -58,6 +62,20 @@ namespace HK.Ungya.CharacterControllers
                     _enemy.CachedTransform.position += velocity;
                 })
                 .AddTo(enemy);
+            
+            enemy.Provider.Receive<Dead>()
+                .SubscribeWithState(enemy, (_, _enemy) =>
+                {
+                    var dropItems = ItemDropper.Drop(_enemy, GameManager.Instance.ItemDropTable, GameManager.Instance.ItemSpec);
+                    if (dropItems.Count > 0)
+                    {
+                        var names = string.Join(",", dropItems.Select(d => d.Name.Get).ToArray());
+                        Debug.Log(string.Format("{0}を落とした", names));
+                    }
+                })
+                .AddTo(enemy);
+            
+            UniRxEvent.GlobalBroker.Publish(EnemySpawned.GetCache(enemy));
         }
 
         private void SetupSpawnDistance(float value)

@@ -9,7 +9,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9b646a9fbcad14fc899c542b8a219dbe, type: 3}
-  m_Name: DropItemTable
+  m_Name: ItemDropTable
   m_EditorClassIdentifier: 
   Tables:
   - CharacterName:
