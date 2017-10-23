@@ -92,7 +92,7 @@ namespace HK.Ungya.UI
             this.Setup(
                 new ButtonParameter(this.sortName, () =>
                 {
-                    Debug.Log("TODO");
+                    UniRxEvent.GlobalBroker.Publish(RequestPopup.GetCache("未実装のようだ..."));
                 }),
                 new ButtonParameter(this.cancelName, () =>
                 {
@@ -118,7 +118,7 @@ namespace HK.Ungya.UI
             {
                 return new ButtonParameter(this.skillName, () =>
                 {
-                    Debug.Log("TODO");
+                    UniRxEvent.GlobalBroker.Publish(RequestPopup.GetCache("未実装のようだ..."));
                 });
             }
         }
