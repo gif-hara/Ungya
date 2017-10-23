@@ -53,7 +53,7 @@ namespace HK.Ungya.CharacterControllers
             if (this.Status.IsDead)
             {
                 Destroy(this.gameObject);
-                this.Provider.Publish(Death.Get());
+                this.Provider.Publish(Dead.Get());
             }
         }
     }
