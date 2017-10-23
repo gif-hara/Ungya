@@ -14,12 +14,12 @@
 
         public void TakeDamage(int damage)
         {
-            this.Instance.hitPoint -= damage;
+            this.Instance.HitPoint -= damage;
         }
 
         public bool IsDead
         {
-            get { return this.Instance.hitPoint <= 0.0f; }
+            get { return this.Instance.HitPoint <= 0.0f; }
         }
     }
 }

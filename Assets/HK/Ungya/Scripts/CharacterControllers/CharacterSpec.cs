@@ -1,4 +1,5 @@
 ﻿using System;
+using HK.Framework.Text;
 using HK.Ungya.CharacterControllers;
 using UnityEngine;
 
@@ -24,13 +25,15 @@ namespace HK
         [Serializable]
         public struct Parameter
         {
-            public string name;
+            public StringAsset.Finder Name;
             
-            public int hitPoint;
+            public int HitPoint;
 
-            public int strength;
+            public int Strength;
 
-            public int defence;
+            public int Defence;
+
+            public int NameHash { get { return this.Name.GetHashCode(); } }
         }
     }
 }

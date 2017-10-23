@@ -37,7 +37,7 @@ namespace HK.Ungya.CharacterControllers
 
         public void Attack()
         {
-            this.target.TakeDamage(this.Status.Instance.strength);
+            this.target.TakeDamage(this.Status.Instance.Strength);
         }
 
         public void TakeDamage(int damage)

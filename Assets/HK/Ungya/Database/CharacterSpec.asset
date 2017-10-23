@@ -12,12 +12,18 @@ MonoBehaviour:
   m_Name: CharacterSpec
   m_EditorClassIdentifier: 
   Player:
-    name: "\u30D7\u30EC\u30A4\u30E4\u30FC"
-    hitPoint: 100
-    strength: 10
-    defence: 0
+    Name:
+      target: {fileID: 11400000, guid: 7b258b00fa5004f1c942367a09556e5a, type: 2}
+      value: "\u30D7\u30EC\u30A4\u30E4\u30FC"
+      guid: 989a5453-29b1-485e-907c-3ed1784dc8e3
+    HitPoint: 100
+    Strength: 10
+    Defence: 0
   Enemies:
-  - name: "\u65750"
-    hitPoint: 30
-    strength: 5
-    defence: 0
+  - Name:
+      target: {fileID: 11400000, guid: 7b258b00fa5004f1c942367a09556e5a, type: 2}
+      value: "\u65750"
+      guid: fd8a0ea0-7cdd-46a0-8fc2-f58479c65cdc
+    HitPoint: 10
+    Strength: 5
+    Defence: 0
