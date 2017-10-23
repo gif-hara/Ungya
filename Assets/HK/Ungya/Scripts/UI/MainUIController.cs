@@ -21,6 +21,8 @@ namespace HK.Ungya.UI
         private UIManager uiManager;
 
         private RectTransform cachedTransform;
+
+        private Tweener transformTweener = null;
         
         void Awake()
         {
@@ -47,12 +49,22 @@ namespace HK.Ungya.UI
 
         private void ToMain()
         {
-            this.mainTransform.Transform(this.cachedTransform, this.uiManager.TweenDutation, this.uiManager.TweenEase);
+            this.StartTween(this.mainTransform);
         }
 
         private void ToExercise()
         {
-            this.otherTransform.Transform(this.cachedTransform, this.uiManager.TweenDutation, this.uiManager.TweenEase);
+            this.StartTween(this.otherTransform);
+        }
+
+        private void StartTween(MainUITransform transform)
+        {
+            if (this.transformTweener != null)
+            {
+                this.transformTweener.Kill();
+            }
+
+            this.transformTweener = transform.Transform(this.cachedTransform, this.uiManager.TweenDutation, this.uiManager.TweenEase);
         }
 
         [Serializable]
