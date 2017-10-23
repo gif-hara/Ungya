@@ -66,12 +66,9 @@ namespace HK.Ungya.CharacterControllers
             enemy.Provider.Receive<Dead>()
                 .SubscribeWithState(enemy, (_, _enemy) =>
                 {
-                    var dropItems = ItemDropper.Drop(_enemy, GameManager.Instance.ItemDropTable, GameManager.Instance.ItemSpec);
-                    if (dropItems.Count > 0)
-                    {
-                        var names = string.Join(",", dropItems.Select(d => d.Name.Get).ToArray());
-                        Debug.Log(string.Format("{0}を落とした", names));
-                    }
+                    var gameManager = GameManager.Instance;
+                    var dropItems = ItemDropper.Drop(_enemy, gameManager.ItemDropTable, gameManager.ItemSpec);
+                    gameManager.Inventory.Add(dropItems);
                 })
                 .AddTo(enemy);
             

@@ -21,6 +21,8 @@ namespace HK.Ungya.GameSystems
         [SerializeField]
         private ItemDropTable itemDropTable;
         public ItemDropTable ItemDropTable { get { return this.itemDropTable; } }
+        
+        public readonly Inventory Inventory = new Inventory();
 
         void Awake()
         {
