@@ -1,4 +1,5 @@
-﻿using HK.Ungya.StateMachines;
+﻿using HK.Ungya.Events.CharacterControllers;
+using HK.Ungya.StateMachines;
 using UniRx;
 using UnityEngine;
 
@@ -52,6 +53,7 @@ namespace HK.Ungya.CharacterControllers
             if (this.Status.IsDead)
             {
                 Destroy(this.gameObject);
+                this.Provider.Publish(Death.Get());
             }
         }
     }
