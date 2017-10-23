@@ -61,6 +61,11 @@ namespace HK.Framework.Text
 			{
 				return this.target.Format(this, args);
 			}
+
+			public override int GetHashCode()
+			{
+				return this.ToString().GetHashCode();
+			}
 		}
 
 		[System.Serializable]
