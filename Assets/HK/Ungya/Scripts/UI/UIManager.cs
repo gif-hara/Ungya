@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using DG.Tweening;
+using UnityEngine;
 
 namespace HK.Ungya.UI
 {
@@ -6,5 +7,15 @@ namespace HK.Ungya.UI
     {
         [SerializeField]
         private GameObject main;
+
+        [SerializeField]
+        private float tweenDutation;
+
+        [SerializeField]
+        private Ease tweenEase;
+
+        public float TweenDutation { get { return this.tweenDutation; } }
+
+        public Ease TweenEase { get { return this.tweenEase; } }
     }
 }
