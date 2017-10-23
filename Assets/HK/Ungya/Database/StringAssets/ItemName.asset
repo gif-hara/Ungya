@@ -20,3 +20,15 @@ MonoBehaviour:
       ja: "\u5200"
       en: 
     guid: 8c9d1d28-c9cc-426b-a033-73d86f274cb0
+  - value:
+      ja: "\u7D20\u67500"
+      en: 
+    guid: b066dcfe-e8c1-4f7b-adc8-fcb814d01412
+  - value:
+      ja: "\u7D20\u67501"
+      en: 
+    guid: 3dde679a-24bb-48eb-b42f-ed5447716ed9
+  - value:
+      ja: "\u7D20\u67502"
+      en: 
+    guid: 13453c30-c537-4480-bd17-42d47a2576a6

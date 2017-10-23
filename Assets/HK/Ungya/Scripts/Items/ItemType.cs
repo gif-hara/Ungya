@@ -5,7 +5,7 @@
         /// <summary>
         /// アビリティ素材
         /// </summary>
-        AbilityMaterial,
+        Material,
         
         /// <summary>
         /// 武器

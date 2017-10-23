@@ -22,3 +22,43 @@ MonoBehaviour:
       guid: 12ce7886-25ca-4c4d-80fb-57c5e4a8bee8
     Type: 1
     SpecId: 0
+  - Name:
+      target: {fileID: 11400000, guid: 6e4699139a66b436ab6e138d0545ea14, type: 2}
+      value: "\u5200"
+      guid: 8c9d1d28-c9cc-426b-a033-73d86f274cb0
+    Description:
+      target: {fileID: 11400000, guid: 421e6c932534f4c1d83de5fc789c273c, type: 2}
+      value: "\u5200\u306E\u8AAC\u660E"
+      guid: 8c472870-dd7c-406e-b4cf-f82bb32cbc23
+    Type: 1
+    SpecId: 1
+  - Name:
+      target: {fileID: 11400000, guid: 6e4699139a66b436ab6e138d0545ea14, type: 2}
+      value: "\u7D20\u67500"
+      guid: b066dcfe-e8c1-4f7b-adc8-fcb814d01412
+    Description:
+      target: {fileID: 11400000, guid: 421e6c932534f4c1d83de5fc789c273c, type: 2}
+      value: "\u7D20\u67500D"
+      guid: 40a7cd08-9b1a-4c7e-9f49-6aa0d45f7ec9
+    Type: 0
+    SpecId: 0
+  - Name:
+      target: {fileID: 11400000, guid: 6e4699139a66b436ab6e138d0545ea14, type: 2}
+      value: "\u7D20\u67501"
+      guid: 3dde679a-24bb-48eb-b42f-ed5447716ed9
+    Description:
+      target: {fileID: 11400000, guid: 421e6c932534f4c1d83de5fc789c273c, type: 2}
+      value: "\u7D20\u67501D"
+      guid: 1613be88-1cf6-4311-93f4-2dbf96607c07
+    Type: 0
+    SpecId: 1
+  - Name:
+      target: {fileID: 11400000, guid: 6e4699139a66b436ab6e138d0545ea14, type: 2}
+      value: "\u7D20\u67502"
+      guid: 13453c30-c537-4480-bd17-42d47a2576a6
+    Description:
+      target: {fileID: 11400000, guid: 421e6c932534f4c1d83de5fc789c273c, type: 2}
+      value: "\u7D20\u67502D"
+      guid: 140749cd-09a5-487a-9f9c-482d54e631a8
+    Type: 0
+    SpecId: 2
