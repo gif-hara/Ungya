@@ -39,6 +39,10 @@ namespace HK.Ungya.UI
                     {
                         _this.ToExercise();
                     }
+                    else if (c.UIType == UIType.Equipment)
+                    {
+                        _this.ToEquipment();
+                    }
                     else
                     {
                         Assert.IsTrue(false, string.Format("未対応の値です {0}", c.UIType));
@@ -53,6 +57,11 @@ namespace HK.Ungya.UI
         }
 
         private void ToExercise()
+        {
+            this.StartTween(this.otherTransform);
+        }
+
+        private void ToEquipment()
         {
             this.StartTween(this.otherTransform);
         }

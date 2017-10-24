@@ -2413,6 +2413,10 @@ MonoBehaviour:
     target: {fileID: 11400000, guid: 16e0a023a0e1042dfae773c2abc4358d, type: 2}
     value: "\u935B\u932C"
     guid: 1a290c6d-7508-4ba7-8d08-a05dd1a26e11
+  Equipment:
+    target: {fileID: 11400000, guid: 16e0a023a0e1042dfae773c2abc4358d, type: 2}
+    value: "\u88C5\u5099"
+    guid: 902d2bb7-24b6-426a-9ff6-1a0781b143b0
   Sort:
     target: {fileID: 11400000, guid: 16e0a023a0e1042dfae773c2abc4358d, type: 2}
     value: "\u6574\u9813"

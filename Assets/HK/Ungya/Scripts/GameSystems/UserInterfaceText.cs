@@ -25,6 +25,11 @@ namespace HK.Ungya.GameSystems
         public StringAsset.Finder Exercise;
 
         /// <summary>
+        /// 装備
+        /// </summary>
+        public StringAsset.Finder Equipment;
+
+        /// <summary>
         /// 整頓
         /// </summary>
         public StringAsset.Finder Sort;

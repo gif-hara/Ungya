@@ -48,6 +48,10 @@ namespace HK.Ungya.UI
                     {
                         _this.ToExercise();
                     }
+                    else if (c.UIType == UIType.Equipment)
+                    {
+                        _this.ToEquipment();
+                    }
                 })
                 .AddTo(this);
         }
@@ -71,8 +75,9 @@ namespace HK.Ungya.UI
         private void ToMain()
         {
             this.Setup(
-                this.CreateSkillParameter,
-                this.CreateExerciseParameter
+                this.SkillParameter,
+                this.ExerciseParameter,
+                this.EquipmentParameter
                 );
         }
 
@@ -84,26 +89,26 @@ namespace HK.Ungya.UI
                 {
                     UniRxEvent.GlobalBroker.Publish(RequestPopup.GetCache("未実装のようだ..."));
                 }),
-                // 戻るボタン
-                new ButtonParameter(UserInterfaceText.Instance.Cancel, () =>
-                {
-                    UniRxEvent.GlobalBroker.Publish(ChangeUI.GetCache(UIType.Main));
-                })
+                this.CancelParameter
                 );
         }
 
-        private ButtonParameter CreateExerciseParameter
+        private void ToEquipment()
         {
-            get
-            {
-                return new ButtonParameter(UserInterfaceText.Instance.Exercise, () =>
+            this.Setup(
+                // ソートボタン
+                new ButtonParameter(UserInterfaceText.Instance.Sort, () =>
                 {
-                    UniRxEvent.GlobalBroker.Publish(ChangeUI.GetCache(UIType.Exercise));
-                });
-            }
+                    UniRxEvent.GlobalBroker.Publish(RequestPopup.GetCache("未実装のようだ..."));
+                }),
+                this.CancelParameter
+            );
         }
 
-        private ButtonParameter CreateSkillParameter
+        /// <summary>
+        /// 特技ボタンを作成する
+        /// </summary>
+        private ButtonParameter SkillParameter
         {
             get
             {
@@ -114,6 +119,45 @@ namespace HK.Ungya.UI
             }
         }
         
+        /// <summary>
+        /// 鍛錬ボタンを作成する
+        /// </summary>
+        private ButtonParameter ExerciseParameter
+        {
+            get
+            {
+                return new ButtonParameter(UserInterfaceText.Instance.Exercise, () =>
+                {
+                    UniRxEvent.GlobalBroker.Publish(ChangeUI.GetCache(UIType.Exercise));
+                });
+            }
+        }
+
+        /// <summary>
+        /// 装備ボタンを作成する
+        /// </summary>
+        private ButtonParameter EquipmentParameter
+        {
+            get
+            {
+                return new ButtonParameter(UserInterfaceText.Instance.Equipment, () =>
+                {
+                    UniRxEvent.GlobalBroker.Publish(ChangeUI.GetCache(UIType.Equipment));
+                });
+            }
+        }
+
+        private ButtonParameter CancelParameter
+        {
+            get
+            {
+                return new ButtonParameter(UserInterfaceText.Instance.Cancel, () =>
+                {
+                    UniRxEvent.GlobalBroker.Publish(ChangeUI.GetCache(UIType.Main));
+                });
+            }
+        }
+
         [Serializable]
         public class FooterButton
         {

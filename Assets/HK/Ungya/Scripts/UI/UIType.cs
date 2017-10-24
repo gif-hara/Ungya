@@ -11,5 +11,10 @@
         /// 鍛錬
         /// </summary>
         Exercise,
+
+        /// <summary>
+        /// 装備
+        /// </summary>
+        Equipment,
     }
 }
