@@ -17,23 +17,13 @@ MonoBehaviour:
       value: "\u65750"
       guid: fd8a0ea0-7cdd-46a0-8fc2-f58479c65cdc
     Elements:
-    - Rate: 0.1
+    - Rate: 0.5
       ItemName:
         target: {fileID: 11400000, guid: 6e4699139a66b436ab6e138d0545ea14, type: 2}
         value: "\u6728\u5200"
         guid: 83b9b5be-f067-4de0-9b2c-27c5eced0c7f
-    - Rate: 0.1
+    - Rate: 0.5
       ItemName:
         target: {fileID: 11400000, guid: 6e4699139a66b436ab6e138d0545ea14, type: 2}
         value: "\u7D20\u67500"
         guid: b066dcfe-e8c1-4f7b-adc8-fcb814d01412
-    - Rate: 0.05
-      ItemName:
-        target: {fileID: 11400000, guid: 6e4699139a66b436ab6e138d0545ea14, type: 2}
-        value: "\u7D20\u67501"
-        guid: 3dde679a-24bb-48eb-b42f-ed5447716ed9
-    - Rate: 0.02
-      ItemName:
-        target: {fileID: 11400000, guid: 6e4699139a66b436ab6e138d0545ea14, type: 2}
-        value: "\u7D20\u67502"
-        guid: 13453c30-c537-4480-bd17-42d47a2576a6

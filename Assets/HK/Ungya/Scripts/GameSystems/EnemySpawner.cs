@@ -1,6 +1,8 @@
 ﻿using System.Linq;
 using HK.Framework.EventSystems;
+using HK.Framework.Text;
 using HK.Ungya.Events.CharacterControllers;
+using HK.Ungya.Events.UI;
 using HK.Ungya.GameSystems;
 using HK.Ungya.Items;
 using HK.Ungya.StateMachines;
@@ -17,6 +19,9 @@ namespace HK.Ungya.CharacterControllers
 
         [SerializeField]
         private float distance;
+
+        [SerializeField]
+        private StringAsset.Finder dropItemMessage;
         
         private float spawnDistance = 0.0f;
         
@@ -69,6 +74,10 @@ namespace HK.Ungya.CharacterControllers
                     var gameManager = GameManager.Instance;
                     var dropItems = ItemDropper.Drop(_enemy, gameManager.ItemDropTable, gameManager.ItemSpec);
                     gameManager.Inventory.Add(dropItems);
+                    foreach (var dropItem in dropItems)
+                    {
+                        UniRxEvent.GlobalBroker.Publish(RequestInformation.GetCache(this.dropItemMessage.Format(dropItem.Name.Get)));
+                    }
                 })
                 .AddTo(enemy);
             

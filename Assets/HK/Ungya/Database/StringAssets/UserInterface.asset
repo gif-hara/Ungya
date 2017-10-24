@@ -28,3 +28,7 @@ MonoBehaviour:
       ja: "\u623B\u308B"
       en: 
     guid: 5881f196-91ff-4d10-ad21-c28ffa00b467
+  - value:
+      ja: "{0}\u3092\u624B\u306B\u5165\u308C\u305F"
+      en: 
+    guid: 7774035b-5575-4057-88cd-b18c4eb19e13
