@@ -1,4 +1,6 @@
-﻿using HK.Ungya.Events.CharacterControllers;
+﻿using HK.Framework.EventSystems;
+using HK.Ungya.Events.CharacterControllers;
+using HK.Ungya.Events.UI;
 using UniRx;
 using UnityEngine;
 using UnityEngine.Assertions;
@@ -39,6 +41,13 @@ namespace HK.Ungya.CharacterControllers
                 .SubscribeWithState(animator, (a, _animator) =>
                 {
                     _animator.SetTrigger(AnimatorParameter.ToAttack);
+                })
+                .AddTo(this);
+
+            UniRxEvent.GlobalBroker.Receive<ChangeUI>()
+                .SubscribeWithState(animator, (c, _animator) =>
+                {
+                    _animator.speed = c.UIType == UIType.Main ? 1.0f : 0.0f;
                 })
                 .AddTo(this);
         }
