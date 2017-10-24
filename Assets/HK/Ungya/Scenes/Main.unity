@@ -472,9 +472,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvasGroup: {fileID: 139870028}
+  background: {fileID: 1584640908}
   message: {fileID: 1390996243}
   tweenDuration: 0.5
   tweenEase: 6
+  tweenPositionY: 120
 --- !u!1 &535651360
 GameObject:
   m_ObjectHideFlags: 0

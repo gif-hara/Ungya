@@ -16,6 +16,9 @@ namespace HK.Ungya.UI
         private CanvasGroup canvasGroup;
 
         [SerializeField]
+        private RectTransform background;
+
+        [SerializeField]
         private Text message;
         
         [SerializeField]
@@ -23,6 +26,9 @@ namespace HK.Ungya.UI
 
         [SerializeField]
         private Ease tweenEase;
+
+        [SerializeField]
+        private float tweenPositionY;
 
         private Tweener tweener;
         
@@ -56,6 +62,9 @@ namespace HK.Ungya.UI
             this.tweener = this.CreateTweener(x =>
             {
                 this.canvasGroup.alpha = x;
+                var position = this.background.anchoredPosition;
+                position.y = Mathf.Lerp(this.tweenPositionY, 0.0f, x);
+                this.background.anchoredPosition = position;
             }).OnComplete(() =>
             {
                 this.canvasGroup.interactable = true;
@@ -70,6 +79,9 @@ namespace HK.Ungya.UI
             this.tweener = this.CreateTweener(x =>
             {
                 this.canvasGroup.alpha = 1.0f - x;
+                var position = this.background.anchoredPosition;
+                position.y = Mathf.Lerp(0.0f, -this.tweenPositionY, x);
+                this.background.anchoredPosition = position;
             });
         }
 
