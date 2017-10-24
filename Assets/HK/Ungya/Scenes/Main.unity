@@ -2344,6 +2344,7 @@ GameObject:
   - component: {fileID: 1550845123}
   - component: {fileID: 1550845124}
   - component: {fileID: 1550845125}
+  - component: {fileID: 1550845126}
   m_Layer: 0
   m_Name: Systems
   m_TagString: Untagged
@@ -2409,6 +2410,21 @@ MonoBehaviour:
   characterSpec: {fileID: 11400000, guid: b873ddc474ee4487cb6a839923222913, type: 2}
   itemSpec: {fileID: 11400000, guid: 86abf023d406148418dec4117799a0bd, type: 2}
   itemDropTable: {fileID: 11400000, guid: c20ae956feb7c4e9db9f3b7e16e54954, type: 2}
+--- !u!114 &1550845126
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1550845121}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6165725208b534927b78ba2ed051dfcd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AcquireItem:
+    target: {fileID: 11400000, guid: 16e0a023a0e1042dfae773c2abc4358d, type: 2}
+    value: "{0}\u3092\u624B\u306B\u5165\u308C\u305F"
+    guid: 7774035b-5575-4057-88cd-b18c4eb19e13
 --- !u!1 &1584640907
 GameObject:
   m_ObjectHideFlags: 0
