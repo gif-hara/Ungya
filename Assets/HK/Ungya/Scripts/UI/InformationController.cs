@@ -46,12 +46,12 @@ namespace HK.Ungya.UI
             UniRxEvent.GlobalBroker.Receive<RequestInformation>()
                 .SubscribeWithState(this, (r, _this) =>
                 {
-                    _this.Stack(r.Message);
+                    _this.Enqueue(r.Message);
                 })
                 .AddTo(this);
         }
 
-        private void Stack(string message)
+        private void Enqueue(string message)
         {
             if (this.sequence == null)
             {
