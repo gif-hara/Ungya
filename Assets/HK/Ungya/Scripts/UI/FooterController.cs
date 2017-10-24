@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using HK.Framework.EventSystems;
 using HK.Framework.Text;
 using HK.Ungya.Events.UI;
+using HK.Ungya.GameSystems;
 using UniRx;
 using UnityEngine;
 using UnityEngine.UI;
@@ -15,18 +16,6 @@ namespace HK.Ungya.UI
         private List<FooterButton> footerButtons;
 
         private List<Action> buttonActions = new List<Action>();
-
-        [SerializeField]
-        private StringAsset.Finder skillName;
-
-        [SerializeField]
-        private StringAsset.Finder exerciseName;
-
-        [SerializeField]
-        private StringAsset.Finder sortName;
-        
-        [SerializeField]
-        private StringAsset.Finder cancelName;
 
         void Awake()
         {
@@ -90,11 +79,13 @@ namespace HK.Ungya.UI
         private void ToExercise()
         {
             this.Setup(
-                new ButtonParameter(this.sortName, () =>
+                // ソートボタン
+                new ButtonParameter(UserInterfaceText.Instance.Sort, () =>
                 {
                     UniRxEvent.GlobalBroker.Publish(RequestPopup.GetCache("未実装のようだ..."));
                 }),
-                new ButtonParameter(this.cancelName, () =>
+                // 戻るボタン
+                new ButtonParameter(UserInterfaceText.Instance.Cancel, () =>
                 {
                     UniRxEvent.GlobalBroker.Publish(ChangeUI.GetCache(UIType.Main));
                 })
@@ -105,7 +96,7 @@ namespace HK.Ungya.UI
         {
             get
             {
-                return new ButtonParameter(this.exerciseName, () =>
+                return new ButtonParameter(UserInterfaceText.Instance.Exercise, () =>
                 {
                     UniRxEvent.GlobalBroker.Publish(ChangeUI.GetCache(UIType.Exercise));
                 });
@@ -116,7 +107,7 @@ namespace HK.Ungya.UI
         {
             get
             {
-                return new ButtonParameter(this.skillName, () =>
+                return new ButtonParameter(UserInterfaceText.Instance.Skill, () =>
                 {
                     UniRxEvent.GlobalBroker.Publish(RequestPopup.GetCache("未実装のようだ..."));
                 });
