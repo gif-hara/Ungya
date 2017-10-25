@@ -1,6 +1,9 @@
 ﻿using System.Collections.Generic;
+using HK.Framework.EventSystems;
+using HK.Ungya.Events.UI;
 using HK.Ungya.GameSystems;
 using HK.Ungya.ObjectPools;
+using UniRx;
 using UnityEngine;
 
 namespace HK.Ungya.UI
@@ -30,6 +33,10 @@ namespace HK.Ungya.UI
                 var element = (WeaponElementController)this.pool.Rent();
                 element.transform.SetParent(this.parent, false);
                 element.Initialize(weapon);
+                element.Button.OnClickAsObservable()
+                    .TakeUntilDisable(element)
+                    .Subscribe(_ => UniRxEvent.GlobalBroker.Publish(RequestPopup.GetCache("未実装のようだ...")))
+                    .AddTo(element);
                 this.elements.Add(element);
             }
         }
