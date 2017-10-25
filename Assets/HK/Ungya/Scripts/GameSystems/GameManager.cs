@@ -35,6 +35,7 @@ namespace HK.Ungya.GameSystems
 
         void Awake()
         {
+            Application.targetFrameRate = 60;
             Assert.IsNull(instance);
             instance = this;
 
