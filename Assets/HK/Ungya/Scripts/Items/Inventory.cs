@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using HK.Framework.EventSystems;
 using HK.Ungya.Events.UI;
+using HK.Ungya.GameSystems;
 using UnityEngine;
 using UnityEngine.Assertions;
 
@@ -63,7 +64,7 @@ namespace HK.Ungya.Items
         private void AddWeapon(Item item)
         {
             Assert.AreEqual(item.Type, ItemType.Weapon);
-            this.Weapons.Add(new Weapon(item));
+            this.Weapons.Add(new Weapon(item, GameManager.Instance.WeaponSpec));
         }
     }
 }

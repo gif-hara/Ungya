@@ -24,6 +24,10 @@ namespace HK.Ungya.GameSystems
         [SerializeField]
         private ItemDropTable itemDropTable;
         public ItemDropTable ItemDropTable { get { return this.itemDropTable; } }
+
+        [SerializeField]
+        private WeaponSpec weaponSpec;
+        public WeaponSpec WeaponSpec { get { return this.weaponSpec; } }
         
         public Character Player { private set; get; }
         
