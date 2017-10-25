@@ -39,6 +39,31 @@ namespace HK.Ungya.GameSystems
         /// </summary>
         public StringAsset.Finder Cancel;
         
+        /// <summary>
+        /// 攻撃力
+        /// </summary>
+        public StringAsset.Finder Strength;
+        
+        /// <summary>
+        /// 防御力
+        /// </summary>
+        public StringAsset.Finder Defence;
+        
+        /// <summary>
+        /// 移動力
+        /// </summary>
+        public StringAsset.Finder MoveSpeed;
+        
+        /// <summary>
+        /// 攻速力
+        /// </summary>
+        public StringAsset.Finder AttackSpeed;
+        
+        /// <summary>
+        /// 運
+        /// </summary>
+        public StringAsset.Finder Luck;
+        
         void Awake()
         {
             Assert.IsNull(instance);
