@@ -37,22 +37,22 @@ MonoBehaviour:
       en: 
     guid: 7774035b-5575-4057-88cd-b18c4eb19e13
   - value:
-      ja: "\u653B\u6483\u529B:{0}"
+      ja: "\u653B\u6483\u529B {0}"
       en: 
     guid: aec6cda6-66bb-4dcd-b7fa-1a09abcc7107
   - value:
-      ja: "\u9632\u5FA1\u529B:{0}"
+      ja: "\u9632\u5FA1\u529B {0}"
       en: 
     guid: 679e650e-306f-4996-815a-296de02326bf
   - value:
-      ja: "\u79FB\u52D5\u529B:{0}"
+      ja: "\u79FB\u52D5\u529B {0}"
       en: 
     guid: ecbba7d3-b2d7-47ff-925e-01b865cd839a
   - value:
-      ja: "\u653B\u901F\u529B:{0}"
+      ja: "\u653B\u901F\u529B {0}"
       en: 
     guid: 80ad7c6e-049c-4dd4-868b-98cef88f7422
   - value:
-      ja: "\u904B:{0}"
+      ja: "\u904B {0}"
       en: 
     guid: 854a63bb-6f74-4a3f-959b-f35d6a23a4d6
