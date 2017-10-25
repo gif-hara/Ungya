@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: 44cd9590228da47fe8c533df851ec7bf
+timeCreated: 1508864784
+licenseType: Free
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: ackaisyo
+  fontNames:
+  - ackaisyo
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Security.Cryptography.X509Certificates;
 using DG.Tweening;
 using HK.Framework.EventSystems;
 using HK.Ungya.Events.UI;
@@ -19,6 +18,9 @@ namespace HK.Ungya.UI
 
         [SerializeField]
         private UIManager uiManager;
+
+        [SerializeField]
+        private WeaponListController weaponListController;
 
         private RectTransform cachedTransform;
 
@@ -54,6 +56,7 @@ namespace HK.Ungya.UI
         private void ToMain()
         {
             this.StartTween(this.mainTransform);
+            this.weaponListController.Clear();
         }
 
         private void ToExercise()
@@ -64,6 +67,7 @@ namespace HK.Ungya.UI
         private void ToEquipment()
         {
             this.StartTween(this.otherTransform);
+            this.weaponListController.Create();
         }
 
         private void StartTween(MainUITransform transform)

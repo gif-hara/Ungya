@@ -1,5 +1,8 @@
-﻿using HK.Ungya.CharacterControllers;
+﻿using HK.Framework.EventSystems;
+using HK.Ungya.CharacterControllers;
+using HK.Ungya.Events.CharacterControllers;
 using HK.Ungya.Items;
+using UniRx;
 using UnityEngine;
 using UnityEngine.Assertions;
 
@@ -22,12 +25,21 @@ namespace HK.Ungya.GameSystems
         private ItemDropTable itemDropTable;
         public ItemDropTable ItemDropTable { get { return this.itemDropTable; } }
         
+        public Character Player { private set; get; }
+        
         public readonly Inventory Inventory = new Inventory();
 
         void Awake()
         {
             Assert.IsNull(instance);
             instance = this;
+
+            UniRxEvent.GlobalBroker.Receive<PlayerSpawned>()
+                .SubscribeWithState(this, (p, _this) =>
+                {
+                    _this.Player = p.Player;
+                })
+                .AddTo(this);
         }
 
         void OnDestroy()
